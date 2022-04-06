@@ -1,5 +1,5 @@
 <?php
-  require("connessionebatabase.php");
+  require("connessionedatabase.php");
 
   $method = $_SERVER['REQUEST_METHOD'];
   if ($method == 'POST'){
