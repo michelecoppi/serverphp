@@ -1,8 +1,8 @@
 <?php
-$host = "localhost";
+$host = "172.17.0.1:3306";
 $user = "root";
-$pass = "";
-$db = "create_employee";   
+$pass = "my-secret-pw";
+$db = "mydb";   
 
 $mysqli= new mysqli($host,$user,$pass,$db);
 ?>

@@ -1,6 +1,10 @@
 <?php
 
   require("connessionedatabase.php");
+  header('Content-Type: application/json');
+  header('Access-Control-Allow-Origin: *');
+ 
+
   $array;
   $size=20;
   $page=0;
@@ -25,24 +29,23 @@ $paginetot=ceil($elementi/$size);
         $array[]=$row;
       }
     }
+    $pagine=array(
+      "size" => $size,
+      "total_Elements" => $elementi,
+      "TotalPages" => $paginetot,
+      "number" => $page
+      );
+      
+      $array[]=["pages" => $pagine];
 
-$pagine=array(
-"size" => $size,
-"total_Elements" => $elementi,
-"TotalPages" => $paginetot,
-"number" => $page
-);
-
-$array[]=["pages" => $pagine];
 $data=json_encode( $array);
 echo $data;
 
   } elseif ($method == 'PUT'){
       
 
-  } elseif ($method == '\DELETE'){
-     
-
+  } elseif ($method == 'DELETE'){
+   
   }
 
   $mysqli->close();
